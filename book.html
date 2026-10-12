@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Lesson | Anish Yewoor Tennis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header>
+  <nav>
+    <span class="brand">Anish Yewoor Tennis</span>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="book.html">Book a Lesson</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Book a Lesson</h2>
+  <p>Fill out the form below and I will reach out to confirm your lesson. Your first lesson is free!</p>
+
+  <div id="thanks" class="thanks" style="display:none;">Thanks! Your request was sent. I will contact you soon.</div>
+
+  <form action="https://formsubmit.co/Anishyewoor@icloud.com" method="POST">
+    <!-- FormSubmit settings -->
+    <input type="hidden" name="_subject" value="New Tennis Lesson Request!">
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://yourname.github.io/book.html?sent=1">
+
+    <label for="name">Your Name (or parent's name)</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="student">Student's Age</label>
+    <input type="text" id="student" name="student_age">
+
+    <label for="lesson">Lesson Type</label>
+    <select id="lesson" name="lesson_type" required>
+      <option value="">Choose one</option>
+      <option value="First Free Lesson (30 mins)">First Free Lesson (30 mins, free)</option>
+      <option value="Group Lesson 1 hr ($25/kid)">Group Lesson, 1 hr ($25/kid)</option>
+      <option value="Group Lesson 30 mins ($15/kid)">Group Lesson, 30 mins ($15/kid)</option>
+      <option value="Private Lesson 1 hr ($40)">Private Lesson, 1 hr ($40)</option>
+      <option value="Private Lesson 30 mins ($25)">Private Lesson, 30 mins ($25)</option>
+    </select>
+
+    <label for="experience">Experience Level</label>
+    <select id="experience" name="experience">
+      <option value="Beginner">Beginner</option>
+      <option value="Intermediate">Intermediate</option>
+      <option value="Advanced">Advanced</option>
+    </select>
+
+    <label for="days">Preferred Days</label>
+    <input type="text" id="days" name="preferred_days" placeholder="e.g. Monday and Wednesday evenings">
+
+    <label for="time">Preferred Time</label>
+    <input type="text" id="time" name="preferred_time" placeholder="e.g. 5:00 PM to 7:00 PM">
+
+    <label for="location">Location</label>
+    <select id="location" name="location">
+      <option value="Prosper">Prosper</option>
+      <option value="Celina">Celina</option>
+      <option value="Frisco">Frisco</option>
+      <option value="Other nearby">Other nearby</option>
+    </select>
+
+    <label for="message">Anything else I should know?</label>
+    <textarea id="message" name="message"></textarea>
+
+    <button type="submit">Send Request</button>
+  </form>
+</div>
+
+<footer>&copy; 2026 Anish Yewoor Tennis Lessons</footer>
+
+<script>
+  // Show the thank-you message after the form is sent
+  if (window.location.search.includes("sent=1")) {
+    document.getElementById("thanks").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
